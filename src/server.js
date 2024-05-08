@@ -58,7 +58,7 @@ onNet("esx:playerDropped", (playerId, reason) => {
 // Request Handler
 on("timecord:postPlayerRequest", (xPlayer, identifiers, fresh, apiKey) => {
   const dataToSend = generatePlayerData(identifiers, xPlayer?.job, fresh, apiKey);
-  const queryString = `http://localhost:3000/api/script?data=${encodeURIComponent(dataToSend)}`;
+  const queryString = `https://timecord.dev/api/script?data=${encodeURIComponent(dataToSend)}`;
 
   axios
     .get(queryString)
