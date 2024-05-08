@@ -19,8 +19,9 @@ on("onResourceStop", (resourceName) => {
 });
 
 // Event handlers
-onNet("timecord:dutyTrigger", (player, xPlayer, on) => {
+onNet("timecord:dutyTrigger", (player, on) => {
   // CUSTOM TRIGGER
+  let xPlayer = ESX.GetPlayerFromId(player);
   let jobs = Object.keys(config.api);
   let apiKeys = Object.values(config.api);
 
@@ -63,7 +64,7 @@ on("timecord:postPlayerRequest", (xPlayer, identifiers, fresh, apiKey) => {
     .get(queryString)
     .then((result) => {
       if (result.status === 200) {
-        if (fresh && config.esx_notify) xPlayer.showNotification(config.messages.player_onduty);
+        if (fresh && config.esx_notify.enabled) xPlayer.showNotification(config.messages.player_onduty);
       } else {
         console.log("[ERROR] " + result.data.message || "Unknown error occurred.");
       }
