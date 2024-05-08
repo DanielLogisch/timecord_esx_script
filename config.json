@@ -1,0 +1,14 @@
+{
+    "api": {
+        "ENTER_JOB_NAME_LIKE_DATABASE (FOR EXAMPLE: police)": "ENTER_API_KEY (GET FROM DASHBOARD)"
+    },
+    "messages": {
+        "no_steam_found": "No Steam found. Please start Steam before connecting!",
+        "no_discord_found": "No Discord found. Make sure Discord is started and linked to your account.",
+        "player_onduty": "You successfully stamped in.",
+        "player_offduty": "You successfully stamped out."
+    },
+    "esx_notify": {
+        "enabled": true
+    }
+}
